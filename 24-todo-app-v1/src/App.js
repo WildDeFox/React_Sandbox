@@ -4,13 +4,17 @@ import TodoList from "./components/Todos/TodoList";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState(['todo one', 'todo two']);
+  const [todos, setTodos] = useState(["todo one", "todo two"]);
+
+  const addTodoHandler = (text) => {
+    setTodos([...todos, text]);
+  };
 
   return (
     <div className="App">
       <h1>Todo App</h1>
-      <TodoForm />
-      <TodoList todos={todos}/>
+      <TodoForm addTodo={addTodoHandler} />
+      <TodoList todos={todos} />
     </div>
   );
 }
