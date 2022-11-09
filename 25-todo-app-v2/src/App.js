@@ -7,6 +7,11 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (text) => {
+    const newTodo = {
+      text: text,
+      isCompleted: false,
+      id: id
+    }
     setTodos([...todos, text]);
   };
 
