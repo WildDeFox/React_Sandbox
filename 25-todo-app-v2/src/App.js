@@ -39,7 +39,7 @@ function App() {
     setTodos(todos.filter((todo) => !todo.isCompleted));
   };
 
-  const completedTodosCount = todos.filter((todo) => todo.isCompleted).length
+  const completedTodosCount = todos.filter((todo) => todo.isCompleted).length;
 
   return (
     <div className="App">
@@ -58,6 +58,12 @@ function App() {
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
       />
+
+      {completedTodosCount > 0 && (
+        <h2>{`You have completed ${completedTodosCount} ${
+          completedTodosCount > 1 ? "todos" : "todo"
+        }`}</h2>
+      )}
     </div>
   );
 }
